@@ -9,10 +9,9 @@
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.20/angular.min.js"></script>
 	<script src="https://cdn.firebase.com/js/client/1.0.18/firebase.js"></script>
 	<script src="https://cdn.firebase.com/libs/angularfire/0.7.1/angularfire.min.js"></script>
-	<script src="https://cdn.firebase.com/js/simple-login/1.6.2/firebase-simple-login.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-	<script type="text/javascript" src="script.js"></script>
 	<script type="text/javascript" src="bootstrap.js"></script>
+	<script type="text/javascript" src="script.js"></script>
 </head>
 <body x-ng-controller="postsCtrl">
 	<header>
@@ -30,12 +29,12 @@
 		        <h4 class="modal-title" id="myModalLabel">Add new post</h4>
 		      </div>
 		      <div class="modal-body">
-		      	<form ng-submit="addPost();">
-			      	<h4>Post title:</h4><input type="text" size="39" placeholder=" post title here" ng-model="newPostTitle"><br>
-			      	<h4>Image URL:</h4><input type="text" size="39" placeholder=" image Url here" ng-model="newImageUrl"><br>
-			     	<h4>Link URL:</h4><input type="text" size="39" placeholder=" link Url here" ng-model="newLinkUrl"><br>
-			     	<h4>Post description:</h4><input type="text" size="39" placeholder=" post description" ng-model="newPostDesc"><br>
-			     	<h4>Category:</h4><input type="text" size="39" placeholder=" post category" ng-model="newPostCat"><br><br>
+		      	<form ng-submit="addPost(newPostTitle, newImageUrl, newLinkUrl, newPostDesc, newPostCat);">
+			      	<h4>Post title:</h4><input type="text" size="39" placeholder=" post title here" ng-model="newPostTitle" /><br/>
+			      	<h4>Image URL:</h4><input type="text" size="39" placeholder=" image Url here" ng-model="newImageUrl" /><br/>
+			     	<h4>Link URL:</h4><input type="text" size="39" placeholder=" link Url here" ng-model="newLinkUrl" /><br/>
+			     	<h4>Post description:</h4><input type="text" size="39" placeholder=" post description" ng-model="newPostDesc" /><br/>
+			     	<h4>Category:</h4><input type="text" size="39" placeholder=" post category" ng-model="newPostCat" /><br/><br/>
 			     	<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 		        	<input type="submit" class="btn btn-primary" value="Save post">
 		     	</form>
@@ -48,7 +47,7 @@
 	<div id="main">
 		<section id="wrapper">
 			<div id="columns">
-				<div class="post" x-ng-repeat="post in posts | filter:searchPosts">
+				<div class="post" x-ng-repeat="post in posts | orderByPriority | filter:searchPosts">
 					<div>
 						<a href="{{ post.url }}" target="_blank">
 							<img x-ng-src="{{ post.image }}">
@@ -58,7 +57,7 @@
 						<div class="post-blurb">{{ post.blurb }}</div>
 						<hr width="90%">
 						<div class="post-category">{{ post.category }}</div>
-						<img id="delete" src="img/trash.png" ng-click="delete(post);">
+						<img id="delete" src="img/trash.png" ng-click="deletePost(post);">			
 					</div>
 				</div>
 			</div>

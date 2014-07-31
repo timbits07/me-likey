@@ -152,6 +152,10 @@ MASONRY
 	opacity: 0.7;
 }
 
+#delete:hover {
+	border: 2px solid red;
+}
+
 @media (min-width: 960px) {
 	#columns {
 		-webkit-column-count: 4;
