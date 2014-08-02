@@ -10,15 +10,18 @@
 	<script src="https://cdn.firebase.com/js/client/1.0.18/firebase.js"></script>
 	<script src="https://cdn.firebase.com/libs/angularfire/0.8.0/angularfire.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="https://cdn.firebase.com/js/simple-login/1.6.1/firebase-simple-login.js"></script>
 	<script type="text/javascript" src="bootstrap.js"></script>
 	<script type="text/javascript" src="script.js"></script>
 </head>
 <body x-ng-controller="postsCtrl">
 	<header>
-		<input id="search" type="text" size="45" placeholder="  search posts here" x-ng-model="searchPosts">
-		<h1>&laquo; me likey &raquo;</h1>
-		<!-- Button trigger modal -->
-		<button id="add-button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">add post</button>
+		<div id="headerBar">
+			<input id="search" type="text" size="45" placeholder="  search posts here" x-ng-model="searchPosts">
+			<h1>&laquo; me likey &raquo;</h1>
+			<!-- Button trigger modal -->
+			<button id="add-button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">add post</button>
+		</div>
 
 		<!-- Modal -->
 		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -36,7 +39,9 @@
 			     	<h4>Post description:</h4><input type="text" size="39" placeholder=" post description" ng-model="newPostDesc" /><br/>
 			     	<h4>Category:</h4><input type="text" size="39" placeholder=" post category" ng-model="newPostCat" /><br/><br/>
 			     	<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-		        	<input type="submit" class="btn btn-primary" value="Save post">
+		        	<input type="submit" class="btn btn-primary" value="Save post"><br/><br/>
+		        	<hr/>
+		        	<p>After adding a post you can click on the see-through 'me likey' ribbon to select your favorites. (Double-click to unlike)</p>
 		     	</form>
 		      </div>
 		    </div>

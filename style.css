@@ -4,17 +4,21 @@ GENERAL
 
 #main {
 	width: 100%;
-	background: url(img/light_honeycomb.png);
+	background: url(img/random_grey_variations.png);
 }
 
 /************************
 HEADER
 ************************/
 
-header {
+#headerBar {
 	width: 100%;
 	background: #0099FF;
 	display: inline-block;
+	position: fixed;
+	z-index: 1;
+	border-bottom: 2px solid black;
+	top: 0;
 }
 
 #search {
@@ -51,6 +55,7 @@ WRAPPER
 #wrapper {
 	max-width: 90%;
 	margin: 0 auto;
+	margin-top: 50px;
 }
 
 
@@ -66,11 +71,21 @@ MODAL
 	padding: 3px;
 	height: 35px;
 	width: 110px;
+	background-color: #81DAF5;
+	color: #424242;
+	font-family: 'Satisfy', cursive;
+	font-size: 1.5em;
+}
+
+#add-button:hover{
+	background-color: #48443B;
+	color: #FFF;
 }
 
 .modal-body {
-	height: 475px;
+	height: 590px;
 	line-height: 30px;
+	position: relative;
 }
 
 
@@ -170,7 +185,7 @@ MASONRY
 }
 
 .post:hover {
-	border: 2px solid #838383;
+	border: 2px solid #0099FF;
 }
 
 #delete {
@@ -179,10 +194,14 @@ MASONRY
 	float: right;
 	margin-top: 10px;
 	opacity: 0.7;
+	display: inline-block;
 }
 
 #delete:hover {
-	border: 2px solid red;
+	/*border: 2px solid red;*/
+	border-radius: 5px;
+	background-color: #f22626;
+	opacity: 0.9;
 }
 
 @media (min-width: 960px) {
