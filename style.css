@@ -5,6 +5,7 @@ GENERAL
 #main {
 	width: 100%;
 	background: url(img/random_grey_variations.png);
+	min-height: 800px;
 }
 
 /************************
@@ -38,6 +39,23 @@ h1 {
 
 h2 {
 	font-family: 'Satisfy', cursive;
+}
+
+#likedPageLink {
+	font-family: 'Satisfy', cursive;
+	color: #FFF;
+	padding-top: 15px;
+	text-align: center;
+	margin-bottom: -7px;
+	font-size: 1.5em;
+}
+
+#likedPageLink a {
+	text-decoration: none;
+}
+
+#likedPageLink a:hover {
+	color: #81DAF5;
 }
 
 hr {

@@ -51,6 +51,7 @@
 	<hr>
 	<div id="main">
 		<section id="wrapper">
+			<h3 id="likedPageLink">Click <a href="liked.html">here</a> to see only 'liked' posts.</h3>
 			<div id="columns">
 				<div class="post" ng-repeat="post in posts | filter:searchPosts">
 					<img ng-click="likePost(post);" ng-Dblclick="unlikePost(post);" ng-class="{true: 'liked', false: 'like'}[post.liked]" ng-src="{{ post.likeImage }}">

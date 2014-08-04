@@ -36,6 +36,19 @@ app.controller('postsCtrl', function($scope, $firebase){ //arguments being passe
 	}
 });
 
+app.controller('likedCtrl', function($scope, $firebase){ //arguments being passed to this function are $scope and $firebase
+	var postsRef = new Firebase('https://me-likey.firebaseio.com/'); //connect our controller to the firebase data-store
+	var sync = $firebase(postsRef);
+	$scope.posts = sync.$asArray();
+
+
+	//now we use the ng-Dblclick function to unlike a post that has been liked.
+	$scope.unlikePost = function(post){
+		var likeRef = new Firebase("https://me-likey.firebaseio.com/" + post.$id);
+		likeRef.update({ liked: false });
+	}
+});
+
 
 // var postRef = new Firebase("https://me-likey.firebaseio.com/" + post.$id);
 // 	postRef.remove();
