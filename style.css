@@ -4,7 +4,7 @@ GENERAL
 
 #main {
 	width: 100%;
-	background: url(img/random_grey_variations.png);
+	background: url(img/seamless_paper_texture.png);
 	min-height: 800px;
 }
 
@@ -43,7 +43,7 @@ h2 {
 
 #likedPageLink {
 	font-family: 'Satisfy', cursive;
-	color: #FFF;
+	color: #424242;
 	padding-top: 15px;
 	text-align: center;
 	margin-bottom: -7px;
@@ -204,10 +204,10 @@ MASONRY
 }
 
 .post:hover {
-	border: 2px solid #0099FF;
+	border: 2px outset #0099FF;
 }
 
-#delete {
+.delete {
 	height: 20px;
 	width: 20px;
 	float: right;
@@ -216,7 +216,7 @@ MASONRY
 	display: inline-block;
 }
 
-#delete:hover {
+.delete:hover {
 	/*border: 2px solid red;*/
 	border-radius: 5px;
 	background-color: #f22626;

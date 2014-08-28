@@ -5,11 +5,12 @@
 	<meta charset="UTF-8">
 	<link href='http://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="animate.css">
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.21/angular.min.js"></script>
 	<script src="https://cdn.firebase.com/js/client/1.0.18/firebase.js"></script>
 	<script src="https://cdn.firebase.com/libs/angularfire/0.8.0/angularfire.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<script src="https://cdn.firebase.com/js/simple-login/1.6.1/firebase-simple-login.js"></script>
 	<script type="text/javascript" src="bootstrap.js"></script>
 	<script type="text/javascript" src="script.js"></script>
@@ -53,7 +54,7 @@
 		<section id="wrapper">
 			<h3 id="likedPageLink">Click <a href="liked.html">here</a> to see only 'liked' posts.</h3>
 			<div id="columns">
-				<div class="post" ng-repeat="post in posts | filter:searchPosts">
+				<div class="post" id="{{ $index }}" ng-repeat="post in posts | filter:searchPosts">
 					<img ng-click="likePost(post);" ng-Dblclick="unlikePost(post);" ng-class="{true: 'liked', false: 'like'}[post.liked]" ng-src="{{ post.likeImage }}">
 					<div>
 						<a ng-href="{{ post.url }}" target="_blank">
@@ -64,8 +65,8 @@
 						<div class="post-blurb">{{ post.blurb }}</div>
 						<hr width="90%">
 						<div class="post-category">{{ post.category }}</div>
-						<a ng-click="deletePost(post);">
-							<img id="delete" src="img/trash.png">	
+						<a ng-click="deletePost(post, $index)">
+							<img class="delete" src="img/trash.png">	
 						</a>	
 					</div>
 				</div>

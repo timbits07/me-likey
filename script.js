@@ -15,11 +15,14 @@ app.controller('postsCtrl', function($scope, $firebase){ //arguments being passe
 	};
 
 	//function for deleting an individual post. post is being passed as an argument and can be accessed because it is an instance in our post in posts ng-repeat.
-	$scope.deletePost = function(post){
+	$scope.deletePost = function(post, $index){
+		$('#' + $index).addClass('animated hinge')
 		var check = confirm("Are you sure you want to delete this post?");
 		if (check == true){
 		$scope.posts.$remove(post);
-
+		};
+		else {
+		$('#' + $index).removeClass('animated hinge')
 		}
 	};
 
