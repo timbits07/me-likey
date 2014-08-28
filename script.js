@@ -20,7 +20,7 @@ app.controller('postsCtrl', function($scope, $firebase){ //arguments being passe
 		var check = confirm("Are you sure you want to delete this post?");
 		if (check == true){
 		$scope.posts.$remove(post);
-		};
+		}
 		else {
 		$('#' + $index).removeClass('animated hinge')
 		}
