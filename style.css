@@ -50,13 +50,13 @@ h2 {
 	font-size: 1.5em;
 }
 
-#likedPageLink a {
+/*#likedPageLink a {
 	text-decoration: none;
 }
 
 #likedPageLink a:hover {
 	color: #81DAF5;
-}
+}*/
 
 hr {
 	margin-top: 2px;
